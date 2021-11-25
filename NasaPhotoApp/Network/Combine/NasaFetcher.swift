@@ -15,10 +15,12 @@ protocol NasaFetchable {
 
 class NasaFetcher {
     
+    private let isMockState: Bool
     private let session: URLSession
     
-    init(session: URLSession = .shared) {
+    init(session: URLSession = .shared, isMockState: Bool = false) {
         self.session = session
+        self.isMockState = isMockState
     }
     
 }
@@ -32,10 +34,17 @@ extension NasaFetcher: NasaFetchable {
     private func forecast<T>(
         with components: URLComponents
     ) -> AnyPublisher<T, NasaError> where T: Decodable {
+        guard !isMockState, MockData.shared.model as? T != nil else {
+            return Just(MockData.shared.model as! T)
+                .setFailureType(to: NasaError.self)
+                .eraseToAnyPublisher()
+        }
+        
         guard let url = components.url else {
             let error = NasaError.network(description: "Couldn't create URL")
             return Fail(error: error).eraseToAnyPublisher()
         }
+
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .mapError { error in
                 .network(description: error.localizedDescription)

@@ -60,7 +60,7 @@ class MarsViewModel: ObservableObject {
                         self.dataSource = []
                         self.stateMachine.tryEvent(.failure)
                     case .finished:
-                        break
+                        self.stateMachine.tryEvent(.failure)
                     }
                 },
                 receiveValue: { [weak self] forecast in

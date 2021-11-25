@@ -25,6 +25,8 @@
 		0EA26102274FB47100D6699E /* NasaResponces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA260F7274FB47100D6699E /* NasaResponces.swift */; };
 		0EA26103274FB47100D6699E /* AsyncNasaFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA260F9274FB47100D6699E /* AsyncNasaFetcher.swift */; };
 		0EA26104274FB47100D6699E /* BlockNasaFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA260FB274FB47100D6699E /* BlockNasaFetcher.swift */; };
+		0EA26107274FC63500D6699E /* TimeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA26106274FC63500D6699E /* TimeTask.swift */; };
+		0EA26109274FC8E000D6699E /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA26108274FC8E000D6699E /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		0EA260F7274FB47100D6699E /* NasaResponces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaResponces.swift; sourceTree = "<group>"; };
 		0EA260F9274FB47100D6699E /* AsyncNasaFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncNasaFetcher.swift; sourceTree = "<group>"; };
 		0EA260FB274FB47100D6699E /* BlockNasaFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockNasaFetcher.swift; sourceTree = "<group>"; };
+		0EA26106274FC63500D6699E /* TimeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeTask.swift; path = ../../../../TimeTask.swift; sourceTree = "<group>"; };
+		0EA26108274FC8E000D6699E /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		0EA2610A274FCC5000D6699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,7 @@
 		0EA260CE274FB40C00D6699E /* NasaPhotoApp */ = {
 			isa = PBXGroup;
 			children = (
+				0EA2610A274FCC5000D6699E /* Info.plist */,
 				0EA260CF274FB40C00D6699E /* NasaPhotoApp.swift */,
 				0EA260F3274FB47100D6699E /* Network */,
 				0EA260EB274FB47100D6699E /* Preview Content */,
@@ -130,6 +136,7 @@
 		0EA260ED274FB47100D6699E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0EA26105274FC61D00D6699E /* Time */,
 				0EA260EE274FB47100D6699E /* ImageLoader */,
 				0EA260F1274FB47100D6699E /* Parsing */,
 			);
@@ -159,6 +166,7 @@
 				0EA260F4274FB47100D6699E /* Combine */,
 				0EA260F8274FB47100D6699E /* Async */,
 				0EA260FA274FB47100D6699E /* Block */,
+				0EA26108274FC8E000D6699E /* MockData.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -187,6 +195,14 @@
 				0EA260FB274FB47100D6699E /* BlockNasaFetcher.swift */,
 			);
 			path = Block;
+			sourceTree = "<group>";
+		};
+		0EA26105274FC61D00D6699E /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				0EA26106274FC63500D6699E /* TimeTask.swift */,
+			);
+			path = Time;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +279,7 @@
 				0EA26100274FB47100D6699E /* NasaFetcher.swift in Sources */,
 				0EA260E7274FB46B00D6699E /* MarsRowViewModel.swift in Sources */,
 				0EA260EA274FB46B00D6699E /* MainView.swift in Sources */,
+				0EA26109274FC8E000D6699E /* MockData.swift in Sources */,
 				0EA26103274FB47100D6699E /* AsyncNasaFetcher.swift in Sources */,
 				0EA260E5274FB46B00D6699E /* TypeLoadingData.swift in Sources */,
 				0EA260E6274FB46B00D6699E /* MainStateMachine.swift in Sources */,
@@ -271,6 +288,7 @@
 				0EA260D0274FB40C00D6699E /* NasaPhotoApp.swift in Sources */,
 				0EA260FF274FB47100D6699E /* Parsing.swift in Sources */,
 				0EA260E8274FB46B00D6699E /* MarsPhotoRow.swift in Sources */,
+				0EA26107274FC63500D6699E /* TimeTask.swift in Sources */,
 				0EA260FD274FB47100D6699E /* ImageLoader.swift in Sources */,
 				0EA260E9274FB46B00D6699E /* MainViewModel.swift in Sources */,
 				0EA26101274FB47100D6699E /* NasaError.swift in Sources */,
@@ -408,6 +426,7 @@
 				DEVELOPMENT_TEAM = 68M2DLBU7E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NasaPhotoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -437,6 +456,7 @@
 				DEVELOPMENT_TEAM = 68M2DLBU7E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NasaPhotoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

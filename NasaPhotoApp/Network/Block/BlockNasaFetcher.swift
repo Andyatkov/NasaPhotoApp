@@ -13,7 +13,17 @@ protocol BlockNasaFetchable {
 
 struct BlockNasaFetcher: BlockNasaFetchable {
     
+    private let isMockState: Bool
+    private let session: URLSession
+    
+    init(session: URLSession = .shared, isMockState: Bool = false) {
+        self.session = session
+        self.isMockState = isMockState
+    }
+    
     func marsPhotos(completion: @escaping (Result<MarsForecastResponse, NasaError>) -> Void) {
+        guard !isMockState else { return completion(.success(MockData.shared.model)) }
+        
         let components = NasaFetcher.marsPhotosComponents()
         guard let url = components.url else {
             let error = NasaError.network(description: "Couldn't create URL")
@@ -21,7 +31,7 @@ struct BlockNasaFetcher: BlockNasaFetchable {
             return
         }
 
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        session.dataTask(with: url) { data, _, error in
 
             if let error = error {
                 completion(.failure(.network(description: error.localizedDescription)))

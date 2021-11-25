@@ -25,10 +25,6 @@ class MainStateMachine {
         case failure
         case cancel
     }
-    
-    private var typeLoading: TypeLoadingData = .combine
-    private var startTime: DispatchTime?
-    private var endTime: DispatchTime?
 
     private(set) var state: State {
         didSet { stateSubject.send(self.state) }
@@ -62,7 +58,7 @@ extension MainStateMachine {
         case .start:
             switch event {
             case .loadingCombine, .loadingBlock, .loadingAsync:
-                detectStartTime(event: event)
+                TimeTask.detectStartTime()
                 return .loading
             case .success, .failure, .cancel:
                 return nil
@@ -72,7 +68,7 @@ extension MainStateMachine {
             case .loadingCombine, .loadingBlock, .loadingAsync:
                 return nil
             case .success:
-                detectEndTime()
+                TimeTask.detectEndTime()
                 return .results
             case .failure:
                 return .error
@@ -95,37 +91,4 @@ extension MainStateMachine {
             }
         }
     }
-    
-    private func detectStartTime(event: Event) {
-        startTime = nil
-        endTime = nil
-        
-        switch event {
-        case .loadingCombine:
-            self.typeLoading = .combine
-        case .loadingAsync:
-            self.typeLoading = .async
-        case .loadingBlock:
-            self.typeLoading = .block
-        default:
-            break
-        }
-        startTime = DispatchTime.now()
-    }
-    
-    private func detectEndTime() {
-        endTime = DispatchTime.now()
-        checkTime()
-    }
-    
-    private func checkTime() {
-        guard let startTime = startTime, let endTime = endTime else { return }
-        
-        let nanoTime = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
-        let timeInterval = Double(nanoTime) / 1_000_000_000
-        
-        print("Time by type loading \(typeLoading.rawValue): \(timeInterval) seconds")
-    }
-    
 }
-
