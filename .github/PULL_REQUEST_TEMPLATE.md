@@ -1,34 +1,55 @@
 # Задача
 
-## Type of change
+## Что было сделано
 
-Please delete options that are not relevant.
+## Скриншоты(optional)
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] This change requires a documentation update
+## Что необходимо протестировать(optional)
 
-# How Has This Been Tested?
+# Review
 
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
+**Иван Алмазов
 
-- [ ] Test A
-- [ ] Test B
+- [ ] Все публичные свойства и методы задокументированы 
+- [ ] Нейминг переменных и функций
+- [ ] Проверка на дублированость кода
+- [ ] Проверка на magic константы
+- [ ] Проверка на [weak self]
+- [ ] Расставлены правильно все MARK и отступы
+- [ ] Добавлены UI тесты на новые UI элементы
+- [ ] Разбитие на подфункции/на логические блоки
+- [ ] Перенос после "("
 
-**Test Configuration**:
-* Firmware version:
-* Hardware:
-* Toolchain:
-* SDK:
+**Кирилл Борисов
 
-# Checklist:
+- [ ] Все публичные свойства и методы задокументированы 
+- [ ] Нейминг переменных и функций
+- [ ] Проверка на дублированость кода
+- [ ] Проверка на magic константы
+- [ ] Проверка на [weak self]
+- [ ] Расставлены правильно все MARK и отступы
+- [ ] Добавлены UI тесты на новые UI элементы
+- [ ] Разбитие на подфункции/на логические блоки
+- [ ] Перенос после "("
 
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published in downstream modules
+**Андрей Дятков
+
+- [ ] Все публичные свойства и методы задокументированы 
+- [ ] Нейминг переменных и функций
+- [ ] Проверка на дублированость кода
+- [ ] Проверка на magic константы
+- [ ] Проверка на [weak self]
+- [ ] Расставлены правильно все MARK и отступы
+- [ ] Добавлены UI тесты на новые UI элементы
+- [ ] Разбитие на подфункции/на логические блоки
+- [ ] Перенос после "("
+
+# Review QA
+
+**Лара Маркова
+
+- [ ] Проверка UI элемента
+- [ ] Проверка скринов после UI тестирования
+- [ ] Проверка в темной/светлой теме
+- [ ] Проверка локализации
+
